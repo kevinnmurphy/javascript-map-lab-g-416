@@ -29,4 +29,9 @@ const zebraStripes = [
   { width: 7.31, color: null }
 ];
 
-const coloredZebraStripes = zebraStripes.map()
+const coloredZebraStripes = zebraStripes.map((stripe, index) => {
+  const isEven  = (index % 2) === 0
+  return Object.assign({}, stripe, {
+    color: isEven ? 'black' : 'white'
+  })
+})
